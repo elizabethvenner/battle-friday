@@ -9,6 +9,6 @@ RSpec.feature "Name submission", :type => :feature do
     fill_in "Player 2", :with => "Malinna"
     click_button "Submit"
 
-    expect(page).to have_text("Elizabeth vs Malinna") 
+    expect(page).to have_text("Elizabeth vs Malinna")
   end
 end
