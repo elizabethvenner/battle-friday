@@ -1,8 +1,10 @@
 require 'sinatra/base'
+#require 'shotgun'
 
 class Battle < Sinatra::Base
+
   get '/' do
-    erb(:index)
+    erb :index
   end
 
   post '/names' do
@@ -13,5 +15,5 @@ class Battle < Sinatra::Base
 
 
   # start the server if ruby file executed directly
-  run! if app_file == $0
+  #run! if app_file == $0
 end
