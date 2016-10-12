@@ -1,6 +1,6 @@
 
 RSpec.feature "Name submission", :type => :feature do
-  scenario "player fills in name" do
+  scenario "The players fill in their names" do
     visit "/"
 
     fill_in :player1, :with => "Elizabeth"
