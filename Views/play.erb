@@ -1,4 +1,7 @@
 <html>
-<p> <%=@player1%> vs <%=@player2%> </p>
-<p> <%=@player2%>'s hit points: 100 </p>
+  <p> <%=@player1%> vs <%=@player2%> </p>
+  <p> <%=@player2%>'s hit points: 100 </p>
+  <form action="/send-attack" method = "post">
+    <input type="submit" value="Attack!">
+  </form>
 </html>

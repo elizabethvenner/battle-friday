@@ -12,3 +12,11 @@ feature "Hit points", :type => :feature do
     expect(page).to have_text("Malinna's hit points: 100")
   end
 end
+
+  feature "Attack player 2", :type => :feature do
+    scenario "Interface allows users to attack each other" do
+      sign_in_and_play
+      click_button "Attack!"
+      expect(page).to have_text("Elizabeth has attacked Malinna.")
+    end
+end
