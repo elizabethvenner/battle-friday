@@ -51,7 +51,6 @@ PLATFORMS
 
 DEPENDENCIES
   capybara
-  nokogiri
   rspec-sinatra
   selenium-webdriver (= 2.53.4)
   sinatra
