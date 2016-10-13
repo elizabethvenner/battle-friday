@@ -32,4 +32,9 @@ enable :sessions
     erb :attack
   end
 
+  post '/counter-attack' do
+    $game.attack($game.player_2)
+    redirect '/play'
+  end
+
 end
