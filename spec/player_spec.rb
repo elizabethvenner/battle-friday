@@ -9,7 +9,7 @@ describe Player do
   end
 
   it 'has its hit points reduced by attack' do
-    expect{player_1.attack(player_2)}.to change{player_2.hit_points}.by(-(Player::DEDUCT_POINTS))
+    expect{player_2.receive_attack}.to change{player_2.hit_points}.by(-(Player::DEDUCT_POINTS))
   end
 
 end
