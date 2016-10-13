@@ -1,4 +1,4 @@
-require 'sinatra/base' #require 'shotgun'
+require 'sinatra/base'
 
 class Battle < Sinatra::Base
 
@@ -17,7 +17,6 @@ enable :sessions
   get '/play' do
      @player1 = session[:player1]
      @player2 = session[:player2]
-     p session
      erb :play
   end
 
