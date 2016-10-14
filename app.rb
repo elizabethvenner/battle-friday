@@ -24,7 +24,11 @@ enable :sessions
   post '/send-attack' do
     $game.switch_player
     $game.attack($game.defender)
-    redirect '/attack'
+    if $game.defender.hit_points == 0
+      redirect '/lose'
+    else
+      redirect '/attack'
+    end
   end
 
   get '/attack' do
@@ -33,9 +37,12 @@ enable :sessions
     erb :attack
   end
 
-  # post '/counter-attack' do
-  #   $game.attack($game.player_1)
-  #   redirect '/play'
-  # end
-
+  get '/lose' do
+    if $game.player_1.hit_points == 0
+      @loser = $game.player_1
+    else
+      @loser = $game.player_2
+    end 
+    erb :lose
+  end
 end
