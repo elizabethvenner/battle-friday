@@ -13,20 +13,29 @@ feature "Hit points", :type => :feature do
   end
 end
 
-  feature "Attack player 2", :type => :feature do
-    scenario "Interface allows users to attack each other" do
-      sign_in_and_play
-      click_button "Player 1 attack!"
-      expect(page).to have_text("Elizabeth has attacked Malinna.")
-    end
+feature "Attack player 2", :type => :feature do
+  scenario "Interface allows users to attack each other" do
+    sign_in_and_play
+    click_button "Elizabeth attack!"
+    expect(page).to have_text("Elizabeth has attacked Malinna.")
   end
+end
 
-    feature "Attack player 2", :type => :feature do
-      scenario "Attack deducts 10 points" do
-        sign_in_and_play
-        click_button "Player 1 attacks!"
-        expect(page).to have_text("Malinna's hit points: 90")
-      end
-
-
+feature "Attack player 1", :type => :feature do
+  scenario "Attack deducts 10 points" do
+    sign_in_and_play
+    click_button "Elizabeth attacks!"
+    click_button "Malinna attacks!"
+    expect(page).to have_text("Elizabeth's hit points: 90")
   end
+end
+
+feature "Attack player 2", :type => :feature do
+  scenario "Attack deducts 10 points" do
+    sign_in_and_play
+    click_button "Elizabeth attacks!"
+    click_button "Malinna attacks!"
+    click_button "Elizabeth attacks!"
+    expect(page).to have_text("Malinna's hit points: 80")
+  end
+end
