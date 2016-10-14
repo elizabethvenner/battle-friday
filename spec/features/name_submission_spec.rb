@@ -24,8 +24,8 @@ end
 feature "Attack player 1", :type => :feature do
   scenario "Attack deducts 10 points" do
     sign_in_and_play
-    click_button "Elizabeth attacks!"
-    click_button "Malinna attacks!"
+    click_button "Elizabeth attack!"
+    click_button "Malinna attack!"
     expect(page).to have_text("Elizabeth's hit points: 90")
   end
 end
@@ -33,9 +33,9 @@ end
 feature "Attack player 2", :type => :feature do
   scenario "Attack deducts 10 points" do
     sign_in_and_play
-    click_button "Elizabeth attacks!"
-    click_button "Malinna attacks!"
-    click_button "Elizabeth attacks!"
+    click_button "Elizabeth attack!"
+    click_button "Malinna attack!"
+    click_button "Elizabeth attack!"
     expect(page).to have_text("Malinna's hit points: 80")
   end
 end

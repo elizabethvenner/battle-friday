@@ -1,5 +1,10 @@
 <html>
- <p><%=@attacker.name%> has attacked <%=@defender.name%>.</p>
- <p><%=@attacker.name%>'s hit points: <%=@attacker.hit_points%></p>
- <p><%=@defender.name%>'s hit points: <%=@defender.hit_points%></p>
+<p><%=@attacker.name%> has attacked <%=@defender.name%>.</p>
+<p><%=@attacker.name%>'s hit points: <%=@attacker.hit_points%></p>
+<p><%=@defender.name%>'s hit points: <%=@defender.hit_points%></p>
+
+<form action="/send-attack" method = "post">
+  <input type="submit" value="<%=@defender.name%> attack!">
+</form>
+
 </html>
